@@ -172,7 +172,15 @@ pascal_sbd_dataset = dataset_base.copy({
     'class_names': PASCAL_CLASSES,
 })
 
-
+rooftop_analytics_dataset = dataset_base.copy({
+  'name': 'rooftop_analytics',
+  'train_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/train/train.json',
+  'train_images': '/content/drive/MyDrive/rooftop_yolact/dataset2/train/',
+  'valid_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/json_files/val.json',
+  'valid_images': '/content/drive/MyDrive/rooftop_yolact/dataset2/val/',
+  'class_names': ('rooftop'),
+  'label_map': { 1:  1 }
+})
 
 
 
@@ -765,6 +773,16 @@ yolact_resnet50_pascal_config = yolact_resnet50_config.copy({
         'pred_scales': [[32], [64], [128], [256], [512]],
         'use_square_anchors': False,
     })
+})
+
+yolact_resnet50_rooftop_config = yolact_resnet50_config.copy({
+    'name': 'yolact_plus_resnet50_rooftop',
+    # Dataset stuff
+    'dataset': rooftop_analytics_dataset,
+    'num_classes': len(rooftop_analytics_dataset.class_names) + 1,
+
+    # Image Size
+    'max_size': 512,
 })
 
 # ----------------------- YOLACT++ CONFIGS ----------------------- #
