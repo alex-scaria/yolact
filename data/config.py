@@ -174,13 +174,15 @@ pascal_sbd_dataset = dataset_base.copy({
 
 rooftop_analytics_dataset = dataset_base.copy({
   'name': 'rooftop_analytics',
-  'train_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/train/train.json',
+  'train_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/json_files/train_coco.json',
   'train_images': '/content/drive/MyDrive/rooftop_yolact/dataset2/train/',
-  'valid_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/json_files/val.json',
+  'valid_info': '/content/drive/MyDrive/rooftop_yolact/dataset2/json_files/val_coco.json',
   'valid_images': '/content/drive/MyDrive/rooftop_yolact/dataset2/val/',
   'class_names': ('rooftop'),
   'label_map': { 1:  1 }
 })
+
+
 
 
 
